@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_rubens.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_matisse.mk
 
-COMMON_LUNCH_CHOICES := twrp_rubens-eng
+COMMON_LUNCH_CHOICES := twrp_matisse-eng
