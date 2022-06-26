@@ -20,7 +20,7 @@ on late-fs
     exec_start wait_for_keymaster
 
     # Mount RW partitions which need run fsck
-    mount_all /first_stage_ramdisk/fstab.mt6895 --late
+    mount_all /first_stage_ramdisk/fstab.mt6983 --late
 
 on fs && property:ro.debuggable=0
     # distinguish USB shoulde connect or not, i.e. CDP vs SDP
