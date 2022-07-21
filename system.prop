@@ -4,9 +4,6 @@ ro.postinstall.fstab.prefix=/system
 # USB MTP
 ro.sys.usb.storage.type=mtp
 
-# Timezone
-persist.sys.timezone=Asia/Shanghai
-
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
@@ -16,4 +13,3 @@ ro.vendor.mtk_microtrust_tee_support=1
 
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
-
