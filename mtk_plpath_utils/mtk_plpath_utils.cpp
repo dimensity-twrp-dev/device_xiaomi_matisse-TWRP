@@ -6,11 +6,13 @@
 #include <sys/types.h>
 #include <time.h>
 #include <unistd.h>
+
 #include <chrono>
 #include <ctime>
 #include <iostream>
 #include <map>
 #include <thread>
+
 #include <android-base/file.h>
 #include <android-base/strings.h>
 #include <android-base/unique_fd.h>
@@ -86,7 +88,7 @@ int create_pl_path(void) {
   DeviceMapper& dm = DeviceMapper::Instance();
   ssize_t sz = 0;
 
-
+  
   fd = open(UFS_PL_A, O_RDONLY);
   if (fd < 0) {
     ALOGE("Cannot open %s (%s)", UFS_PL_A, strerror(errno));
@@ -130,7 +132,7 @@ int create_pl_path(void) {
   }
 
   blk_cnt -= start_blk;
-
+  
   if (create_dm(UFS_PL_A, NAME_PL_A, &path_a, start_blk, blk_cnt) != 0) {
     return 1;
   }

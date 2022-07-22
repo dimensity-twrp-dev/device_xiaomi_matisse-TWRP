@@ -76,24 +76,6 @@ service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     oneshot
     seclabel u:r:recovery:s0
 
-service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
-    class hal
-    user system
-    group system input
-    seclabel u:r:recovery:s0
-
-service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
-    interface android.hardware.gatekeeper@1.0::IGatekeeper default
-    user root
-    group root
-    disabled
-    seclabel u:r:recovery:s0
-
-service vendor.keymint-beanpod /vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod
-    class early_hal
-    user nobody
-    seclabel u:r:recovery:s0
-
 service wait_for_keymaster /system/bin/wait_for_keymaster
     user root
     group root system
@@ -113,11 +95,29 @@ service hwservicemanager /system/bin/hwservicemanager
     disabled
     onrestart setprop hwservicemanager.ready false
     seclabel u:r:recovery:s0
-
+    
 service servicemanager /system/bin/servicemanager
     user root
     group root readproc
     disabled
+    seclabel u:r:recovery:s0
+
+service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+    class hal
+    user system
+    group system input
+    seclabel u:r:recovery:s0
+
+service vendor.gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    interface android.hardware.gatekeeper@1.0::IGatekeeper default
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service vendor.keymint-beanpod /vendor/bin/hw/android.hardware.security.keymint@1.0-service.beanpod
+    class early_hal
+    user nobody
     seclabel u:r:recovery:s0
 
 on property:crypto.ready=1
